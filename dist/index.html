@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#102c3c" />
+  <meta name="description" content="Stay at Emmet’s Place in Miller Beach, Indiana. Explore local beaches, parks, trails, restaurants, bars, and events near Lake Michigan and Indiana Dunes National Park." />
+  <title>Things to Do in Miller Beach | Emmet’s Place</title>
+  <style>
+    :root {
+      --ink: #17323c;
+      --navy: #102c3c;
+      --blue: #2f7484;
+      --teal: #4c9ba1;
+      --sand: #efe3cd;
+      --cream: #f8f6f0;
+      --white: #fffefa;
+      --line: rgba(23, 50, 60, .18);
+      --muted: #566970;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .topline { background: var(--navy); color: #e7f0ec; text-align: center; padding: 8px 16px; font-size: .8rem; letter-spacing: .13em; text-transform: uppercase; }
+    header { background: var(--cream); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+    .nav { max-width: 1240px; margin: auto; min-height: 78px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+    .brand-mark { width: 38px; height: 38px; border: 1px solid var(--blue); border-radius: 50%; display: grid; place-items: center; color: var(--blue); font: 1.05rem var(--serif); }
+    .brand-name { display: block; font: 1.23rem var(--serif); letter-spacing: .015em; }
+    .brand-place { display: block; color: var(--muted); font-size: .67rem; letter-spacing: .16em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a { text-decoration: none; font-size: .91rem; }
+    .nav-links a:hover { color: var(--blue); }
+    .button { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; padding: 0 22px; border: 1px solid var(--navy); background: var(--navy); color: white; text-decoration: none; letter-spacing: .02em; transition: background .2s, color .2s, transform .2s; cursor: pointer; }
+    .button:hover { background: var(--blue); border-color: var(--blue); transform: translateY(-1px); }
+    .button-outline { background: transparent; color: var(--navy); }
+    .button-outline:hover { color: white; }
+    main { overflow: hidden; }
+    .hero { min-height: 650px; background: var(--navy); color: white; display: grid; grid-template-columns: minmax(320px, .83fr) minmax(0, 1.17fr); }
+    .hero-copy { padding: 82px clamp(28px, 6vw, 100px) 74px max(28px, calc((100vw - 1240px) / 2)); display: flex; flex-direction: column; justify-content: center; }
+    .eyebrow { color: #9fcbd0; font-size: .76rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font: clamp(2.7rem, 4.7vw, 4.8rem)/1.04 var(--serif); letter-spacing: -.03em; margin: 22px 0; max-width: 620px; }
+    .hero-copy p { max-width: 490px; color: #d3e1dd; font-size: 1.1rem; margin-bottom: 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero .button { background: #e7d5b5; border-color: #e7d5b5; color: var(--navy); }
+    .hero .button:hover { background: white; border-color: white; }
+    .hero .button-outline { color: white; border-color: rgba(255,255,255,.55); background: transparent; }
+    .hero .button-outline:hover { background: white; color: var(--navy); }
+    .hero-media { min-height: 560px; background: linear-gradient(160deg, #275a6c, #458794 43%, #b5c8bd 44%, #728f82 45%, #d2c2a5 67%, #e6dac4); position: relative; display: grid; place-items: center; padding: 0; }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 0; }
+    .hero-media::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, transparent 56%, rgba(16,44,60,.48)); }
+    .asset-note { position: relative; border: 1px solid rgba(255,255,255,.75); background: rgba(16,44,60,.48); backdrop-filter: blur(8px); color: white; padding: 18px 22px; text-align: center; max-width: 290px; }
+    .asset-note strong { display: block; font: 1.4rem var(--serif); margin-bottom: 4px; }
+    .asset-note span { color: #ecf3ed; font-size: .9rem; }
+    .hero-caption { position: absolute; bottom: 25px; left: 34px; right: 34px; z-index: 2; display: flex; justify-content: space-between; gap: 12px; color: white; font-size: .77rem; letter-spacing: .12em; text-transform: uppercase; pointer-events: none; }
+    .strip { background: var(--sand); padding: 18px 24px; }
+    .strip-inner { max-width: 1110px; margin: auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 12px 28px; text-align: center; color: var(--ink); font-size: .82rem; letter-spacing: .13em; text-transform: uppercase; }
+    .section { max-width: 1160px; margin: auto; padding: 100px 28px; }
+    .intro-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(35px, 9vw, 125px); align-items: start; }
+    .section-kicker { color: var(--blue); font-size: .78rem; letter-spacing: .19em; text-transform: uppercase; font-weight: 700; }
+    h2 { font: clamp(2.15rem, 3.4vw, 3.5rem)/1.12 var(--serif); letter-spacing: -.025em; }
+    .intro-copy p { max-width: 650px; font-size: 1.12rem; color: var(--muted); }
+    .intro-copy .lead { color: var(--ink); font: 1.55rem/1.45 var(--serif); }
+    .gallery-section { background: #e7ede9; }
+    .gallery-inner { max-width: 1240px; margin: auto; padding: 84px 28px 92px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 30px; }
+    .section-head h2 { margin: 8px 0 0; }
+    .section-head p { max-width: 350px; color: var(--muted); margin: 0 0 4px; }
+    .gallery-grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; grid-template-rows: 220px 220px; gap: 14px; }
+    .gallery-slot { min-height: 180px; padding: 20px; display: flex; align-items: end; position: relative; overflow: hidden; background: linear-gradient(145deg, #afc7c3, #5c8e8b 55%, #e2d4bd); }
+    .gallery-slot:nth-child(2) { background: linear-gradient(155deg, #d9c6a9, #a6b9ab 52%, #68887c); }
+    .gallery-slot:nth-child(3) { background: linear-gradient(155deg, #c2d4d4, #65949c 52%, #194359); }
+    .gallery-slot:nth-child(4) { background: linear-gradient(150deg, #dbcba8, #b69b77 55%, #4d6c69); }
+    .gallery-slot:nth-child(5) { background: linear-gradient(150deg, #c7d5cf, #789a90 55%, #d4c2a4); }
+    .gallery-slot span { position: relative; display: inline-block; padding: 8px 11px; background: rgba(16,44,60,.76); color: white; font-size: .78rem; letter-spacing: .05em; }
+    .gallery-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .floor-plan-section { background: var(--white); }
+    .floor-plan-inner { max-width: 1240px; margin: auto; padding: 84px 28px 92px; }
+    .floor-plan-image { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: white; }
+    .floor-plan-link { display: inline-block; margin-top: 14px; color: var(--blue); font-weight: 600; }
+    .stay-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 8vw, 100px); align-items: center; }
+    .stay-visual { min-height: 460px; background: linear-gradient(135deg, #6c9da0, #c1d0c8 48%, #ddcfb4 49%, #eaddc8); display: grid; place-items: center; padding: 25px; }
+    .stay-visual .asset-note { background: rgba(16,44,60,.75); }
+    .stay-copy p { color: var(--muted); font-size: 1.04rem; }
+    .stay-copy h2 { margin: 10px 0 22px; }
+    .location { background: var(--navy); color: white; }
+    .location-grid { max-width: 1240px; margin: auto; padding: 86px 28px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
+    .location h2 { color: white; }
+    .location p { color: #d3e1dd; max-width: 500px; }
+    .location-links { display: grid; gap: 12px; }
+    .location-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; text-decoration: none; padding: 19px 20px; border: 1px solid rgba(255,255,255,.28); color: white; }
+    .location-link:hover { background: rgba(255,255,255,.1); }
+    .location-link small { display: block; color: #aac6c4; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; }
+    .things { background: #f3f1e9; }
+    .things-inner { max-width: 1240px; margin: auto; padding: 96px 28px 78px; }
+    .things-heading { max-width: 760px; margin: 0 auto 48px; text-align: center; }
+    .things-heading h2 { margin: 9px 0 17px; }
+    .things-heading p { color: var(--muted); font-size: 1.04rem; }
+    .things-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 16px; }
+    .things-card { background: var(--white); padding: 28px 27px 30px; border-top: 4px solid var(--blue); box-shadow: 0 8px 24px rgba(16,44,60,.05); }
+    .things-card.dining { border-top-color: #aa805a; }
+    .things-card.culture { border-top-color: #6f8d76; }
+    .card-index { color: var(--blue); display: block; font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .things-card h3 { font: 1.72rem/1.12 var(--serif); margin: 12px 0 19px; }
+    .things-item { padding: 17px 0 16px; border-top: 1px solid var(--line); }
+    .things-item h4 { margin: 0 0 5px; font: 1.16rem var(--serif); }
+    .things-item p { color: var(--muted); font-size: .9rem; line-height: 1.55; margin: 0 0 7px; }
+    .things-item a { color: #205e6d; font-size: .84rem; font-weight: 700; text-underline-offset: 3px; }
+    .things-item a:hover { color: var(--navy); }
+    .compact-item { padding-bottom: 0; }
+    .link-divider { padding: 0 7px; color: var(--muted); }
+    .event-note { padding: 15px; margin: 16px 0; background: #edf1e9; color: var(--muted); font-size: .86rem; }
+    .event-note strong { display: block; color: var(--ink); margin-bottom: 3px; }
+    .calendar-button { min-height: 43px; padding: 0 14px; font-size: .85rem; }
+    .things-footnote { margin: 23px 0 0; text-align: center; color: var(--muted); font-size: .83rem; }
+    .booking { background: var(--sand); }
+    .booking-grid { max-width: 1160px; margin: auto; padding: 92px 28px; display: grid; grid-template-columns: .83fr 1.17fr; gap: 70px; }
+    .booking-copy h2 { margin: 10px 0 20px; }
+    .booking-copy p { max-width: 390px; color: var(--muted); }
+    .booking-form { background: var(--white); padding: clamp(23px, 4vw, 45px); display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .field { display: grid; gap: 6px; }
+    .field.full, .form-note, .booking-form button, #form-message { grid-column: 1 / -1; }
+    label { font-size: .84rem; font-weight: 600; }
+    input, select, textarea { width: 100%; border: 1px solid #b7c3c1; background: white; color: var(--ink); min-height: 48px; padding: 10px 12px; border-radius: 0; }
+    textarea { min-height: 100px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
+    .form-note { font-size: .78rem; color: var(--muted); margin: 0; }
+    #form-message { display: none; padding: 12px; background: #edf3ef; color: var(--ink); margin: 0; }
+    footer { background: #0c222e; color: #d3e1dd; padding: 42px 28px; }
+    .footer-inner { max-width: 1160px; margin: auto; display: flex; justify-content: space-between; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .footer-brand { font: 1.2rem var(--serif); color: white; }
+    footer a { color: #d3e1dd; }
+    .footer-note { font-size: .8rem; margin: 0; }
+    @media (max-width: 800px) {
+      .nav { padding: 0 18px; min-height: 68px; }
+      .nav-links { gap: 14px; }
+      .nav-links a:not(.button) { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { padding: 68px 24px 50px; }
+      .hero-media { min-height: 390px; }
+      .section { padding: 72px 22px; }
+      .intro-grid, .stay-grid, .location-grid, .booking-grid { grid-template-columns: 1fr; gap: 34px; }
+      .things-grid { grid-template-columns: 1fr 1fr; }
+      .things-card.culture { grid-column: 1 / -1; }
+      .things-inner { padding: 70px 22px 60px; }
+      .gallery-inner { padding: 68px 22px; }
+      .floor-plan-inner { padding: 68px 22px; }
+      .section-head { align-items: start; flex-direction: column; gap: 14px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 230px 170px 170px; }
+      .gallery-slot:first-child { grid-column: 1 / -1; grid-row: auto; }
+      .stay-visual { min-height: 340px; }
+      .location-grid, .booking-grid { padding: 70px 22px; }
+    }
+    @media (max-width: 480px) {
+      .topline { font-size: .69rem; }
+      .brand-name { font-size: 1.05rem; }
+      .brand-place { font-size: .59rem; }
+      .brand-mark { width: 34px; height: 34px; }
+      .nav-links .button { min-height: 42px; padding: 0 12px; font-size: .82rem; }
+      .hero-copy { padding: 55px 20px 42px; }
+      h1 { font-size: 2.85rem; }
+      .hero-media { min-height: 320px; }
+      .gallery-grid { grid-template-rows: 200px 150px 150px; gap: 9px; }
+      .gallery-slot { padding: 12px; }
+      .booking-form { grid-template-columns: 1fr; }
+      .field.full, .form-note, .booking-form button, #form-message { grid-column: 1; }
+      .things-grid { grid-template-columns: 1fr; }
+      .things-card.culture { grid-column: auto; }
+      .things-card { padding: 24px 21px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline">Miller Beach · Lake Michigan · Indiana Dunes</div>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Emmet’s Place home">
+        <span class="brand-mark" aria-hidden="true">E</span>
+        <span><span class="brand-name">Emmet’s Place</span><span class="brand-place">Miller Beach, Indiana</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#cottage">The cottage</a>
+        <a href="#floor-plan">Floor plan</a>
+        <a href="#things-to-do">Things to do</a>
+        <a class="button" href="#request">Request dates</a>
+      </div>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow">A Lake Michigan getaway</span>
+        <h1 id="hero-title">Find your place by the dunes.</h1>
+        <p>Welcome to Emmet’s Place, a cottage in Miller Beach on Lake Michigan’s Indiana shore—an easygoing home base for beach days, dune country, and time together.</p>
+        <div class="hero-actions">
+          <a class="button" href="#request">Ask about your dates</a>
+          <a class="button button-outline" href="#cottage">Explore the cottage</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <iframe class="hero-video" src="https://drive.google.com/file/d/1E5bRY650o-W0MJ_TBRl5xE5zkgp4VKsf/preview" title="Drone video of Emmet’s Place and Miller Beach" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <div class="hero-caption"><span>Emmet’s Place</span><span>Miller Beach, Indiana</span></div>
+      </div>
+    </section>
+    <div class="strip" aria-label="Location highlights"><div class="strip-inner"><span>Lake Michigan shoreline</span><span>Indiana Dunes country</span><span>Miller Beach neighborhood</span></div></div>
+
+    <section class="section" id="cottage">
+      <div class="intro-grid">
+        <div><span class="section-kicker">A place to settle in</span><h2>Make room for a slower kind of getaway.</h2></div>
+        <div class="intro-copy"><p class="lead">A comfortable cottage, a change of scenery, and the lake close at hand.</p><p>Emmet’s Place puts you in Miller Beach, a distinctive lakeside neighborhood at the edge of Indiana Dunes country. Come for fresh air and long walks; leave space in the day for whatever feels good.</p><p>Take a look around, then tell us when you’re hoping to visit. We’ll follow up about availability and the details of your stay.</p></div>
+      </div>
+    </section>
+
+    <section class="gallery-section" aria-labelledby="gallery-title">
+      <div class="gallery-inner">
+        <div class="section-head"><div><span class="section-kicker">Take a look around</span><h2 id="gallery-title">The cottage, in its own light.</h2></div><p>A first look at the cottage’s rooms and spaces.</p></div>
+        <div class="gallery-grid" aria-label="Cottage photo gallery">
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-exterior.jpeg" alt="Front of Emmet’s Place, a white Miller Beach cottage with an upper balcony and garden" loading="lazy"><span>Emmet’s Place · front exterior</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-sloped-ceiling-bedroom.jpeg" alt="Bedroom at Emmet’s Place with a single bed beneath a sloped ceiling" loading="lazy"><span>Bedroom</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-kitchen.jpeg" alt="Bright cottage kitchen with white cabinetry, butcher-block counters, stainless appliances, and a central island" loading="lazy"><span>Kitchen</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-primary-bedroom.jpeg" alt="Primary bedroom at Emmet’s Place with a king bed, dresser, and upholstered bench" loading="lazy"><span>Primary bedroom</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-bedroom.jpeg" alt="Bedroom at Emmet’s Place with three twin beds" loading="lazy"><span>Bedroom</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-dining.jpeg" alt="Dining area at Emmet’s Place with a white table beside the kitchen island" loading="lazy"><span>Dining area</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-recreation-room.jpeg" alt="Lower-level recreation room at Emmet’s Place with a sectional sofa, exposed beams, and patio doors" loading="lazy"><span>Recreation room</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-bathroom-1.jpeg" alt="Bathroom at Emmet’s Place with a shower, vanity, and white tile" loading="lazy"><span>Bathroom</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-additional-sleeping-area.jpeg" alt="Additional sleeping area in the lower-level recreation room with a daybed and exposed wood ceiling" loading="lazy"><span>Additional sleeping area</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-outdoor-shower.jpeg" alt="Private outdoor shower beside the cottage, enclosed by a wooden privacy screen" loading="lazy"><span>Outdoor shower</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-patio-seating.jpeg" alt="Covered upper patio with turquoise seating, a coffee table, and a grill" loading="lazy"><span>Covered patio</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-covered-porch.jpeg" alt="Covered porch with outdoor chairs and leafy neighborhood views" loading="lazy"><span>Covered porch</span></div>
+          <div class="gallery-slot"><img class="gallery-photo" src="assets/emmet-place-bathroom-2.jpeg" alt="Second bathroom at Emmet’s Place with a vanity, large mirror, and tiled counter" loading="lazy"><span>Bathroom</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="floor-plan-section" id="floor-plan" aria-labelledby="floor-plan-title">
+      <div class="floor-plan-inner">
+        <div class="section-head"><div><span class="section-kicker">Plan your stay</span><h2 id="floor-plan-title">Explore the floor plan.</h2></div><p>See the main level, second floor, and lower level before you arrive.</p></div>
+        <img class="floor-plan-image" src="assets/emmet-place-floor-plan.jpeg" alt="Floor plan for Emmet’s Place showing the main level, second floor, and lower level below grade" loading="lazy">
+        <a class="floor-plan-link" href="assets/emmet-place-floor-plan.jpeg" target="_blank" rel="noopener">Open the full-size floor plan ↗</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="stay-grid">
+        <div class="stay-visual" role="img" aria-label="Placeholder for a professional interior photo of Emmet’s Place"><div class="asset-note"><strong>Real photos, real cottage</strong><span>We’ll feature your professional photography here</span></div></div>
+        <div class="stay-copy"><span class="section-kicker">A little more than a place to sleep</span><h2>Come for the lake. Stay for the feeling.</h2><p>Start with a slow morning, head out to explore the lakeshore, and come back to a place that feels like yours for a while. Emmet’s Place is here for beach weekends, family time, and the in-between seasons too.</p><p>We’ll add the cottage’s exact room, amenity, and guest details alongside your photos so visitors can picture their stay with confidence.</p><a class="button button-outline" href="#request">Ask about a stay</a></div>
+      </div>
+    </section>
+
+    <section class="location" id="location">
+      <div class="location-grid">
+        <div><span class="eyebrow">Out the door and into dune country</span><h2>Discover Miller Beach and the Indiana Dunes.</h2><p>Miller Beach brings together Lake Michigan’s shoreline, a creative neighborhood feel, and access to the wider Indiana Dunes region. Make the cottage your starting point for exploring the coast.</p></div>
+        <div class="location-links">
+          <a class="location-link" href="https://www.visitmillerbeachgary.com/" target="_blank" rel="noopener"><span><small>Local guide</small>Visit Miller Beach</span></a>
+          <a class="location-link" href="https://www.nps.gov/indu/index.htm" target="_blank" rel="noopener"><span><small>Plan a park visit</small>Indiana Dunes National Park</span></a>
+          <a class="location-link" href="https://www.indianadunes.com/" target="_blank" rel="noopener"><span><small>More places and ideas</small>Indiana Dunes Tourism</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="things" id="things-to-do" aria-labelledby="things-title">
+      <div class="things-inner">
+        <div class="things-heading">
+          <span class="section-kicker">Make a day of it</span>
+          <h2 id="things-title">Things to do in Miller Beach.</h2>
+          <p>Follow a dune trail, take in the lakeshore, wander the Lake Street arts district, or settle in for something good to eat. Check the linked sites for current hours, seasonal access, and event dates.</p>
+        </div>
+        <div class="things-grid">
+          <article class="things-card outdoors">
+            <span class="card-index">01 · Outside</span>
+            <h3>Beach, trails &amp; parkland</h3>
+            <div class="things-item">
+              <h4>Marquette Park</h4>
+              <p>A 241-acre lakefront park with beaches, trails, a lagoon, the historic Aquatorium, playground, and disc golf.</p>
+              <a href="https://www.gary.gov/marquette-park/about" target="_blank" rel="noopener">Plan a visit</a>
+            </div>
+            <div class="things-item">
+              <h4>Miller Woods &amp; Paul H. Douglas Trail</h4>
+              <p>Walk through wetlands, oak savanna, open dunes, and beach in this Indiana Dunes National Park trail area.</p>
+              <a href="https://www.nps.gov/places/paul-h-douglas-trail.htm" target="_blank" rel="noopener">See trail details</a>
+            </div>
+            <div class="things-item">
+              <h4>West Beach</h4>
+              <p>Explore another Lake Michigan beach and dune landscape in Indiana Dunes National Park.</p>
+              <a href="https://www.nps.gov/indu/planyourvisit/west-beach.htm" target="_blank" rel="noopener">Visit the park page</a>
+            </div>
+          </article>
+          <article class="things-card dining">
+            <span class="card-index">02 · Around the table</span>
+            <h3>Local places to eat &amp; drink</h3>
+            <div class="things-item">
+              <h4>Tiny’s Coffee Bar</h4>
+              <p>Coffee, breakfast, lunch, dinner, and a full-service bar in the Miller Beach business district.</p>
+              <a href="https://www.tinyscoffeebar.com/" target="_blank" rel="noopener">Visit Tiny’s</a>
+            </div>
+            <div class="things-item">
+              <h4>Estella’s Cantina</h4>
+              <p>Tacos and cocktails, with a menu built around favorites like al pastor, steak, chicken, and chorizo.</p>
+              <a href="https://www.estellascantina.com/" target="_blank" rel="noopener">Visit Estella’s</a>
+            </div>
+            <div class="things-item">
+              <h4>Beach Box</h4>
+              <p>A relaxed Lake Street stop for cocktails, hot dogs, and Cajun-inspired food.</p>
+              <a href="https://millerbeachbox.com/" target="_blank" rel="noopener">Visit Beach Box</a>
+            </div>
+            <div class="things-item">
+              <h4>Flamingo Pizza of Miller</h4>
+              <p>A neighborhood bar and grill known for stone-baked pizza, lake perch, burgers, and a lively local feel.</p>
+              <a href="https://www.southshorecva.com/blog/post/exploring-the-south-shores-beach-towns/" target="_blank" rel="noopener">Find Flamingo Pizza</a>
+            </div>
+            <div class="things-item compact-item">
+              <h4>More neighborhood favorites</h4>
+              <p>Try a local pint at 18th Street Brewery or pick up pizza from Miller Pizza Company.</p>
+              <a href="https://www.18thstreetbrewery.com/home" target="_blank" rel="noopener">18th Street Brewery</a>
+              <span class="link-divider">·</span>
+              <a href="https://www.millerpizza.net/" target="_blank" rel="noopener">Miller Pizza</a>
+            </div>
+          </article>
+          <article class="things-card culture">
+            <span class="card-index">03 · Arts &amp; neighborhood events</span>
+            <h3>Find the local rhythm</h3>
+            <div class="things-item">
+              <h4>Lake Street arts district</h4>
+              <p>Browse murals, galleries, independent shops, and creative spaces around downtown Miller Beach.</p>
+              <a href="https://www.visitmillerbeachgary.com/directory" target="_blank" rel="noopener">Explore the community map</a>
+            </div>
+            <div class="things-item">
+              <h4>Fest in the First</h4>
+              <p>A neighborhood street festival celebrating local businesses, artists, nonprofits, and community groups.</p>
+              <a href="https://www.festinthefirst.com/" target="_blank" rel="noopener">Festival details</a>
+            </div>
+            <div class="things-item">
+              <h4>Flamingo Fest</h4>
+              <p>Flamingo Pizza’s end-of-summer celebration, with live music and a festive neighborhood atmosphere. It’s usually around Labor Day weekend, so the date can land in late August or early September.</p>
+              <a href="https://www.facebook.com/Flamingos-Pizza-109139032448742/" target="_blank" rel="noopener">Follow Flamingo Pizza for updates</a>
+            </div>
+            <div class="things-item">
+              <h4>Lake Effekt Mural Fest</h4>
+              <p>Look for this outdoor mural event from the Miller Beach Arts &amp; Creative District.</p>
+              <a href="https://millerbeacharts.org/" target="_blank" rel="noopener">See arts district updates</a>
+            </div>
+            <div class="event-note"><strong>Coming for an event?</strong> Dates and schedules change. Check the local event calendar before you plan your stay.</div>
+            <a class="button button-outline calendar-button" href="https://www.visitmillerbeachgary.com/events" target="_blank" rel="noopener">View Miller Beach events</a>
+          </article>
+        </div>
+        <p class="things-footnote">Local businesses, park conditions, and event schedules can change. Please confirm details directly before heading out.</p>
+      </div>
+    </section>
+
+    <section class="booking" id="request">
+      <div class="booking-grid">
+        <div class="booking-copy"><span class="section-kicker">Plan your stay</span><h2>Tell us what dates you have in mind.</h2><p>Send a stay request and we’ll get back to you about availability. A request is not a confirmed reservation.</p></div>
+        <form class="booking-form" id="booking-form">
+          <div class="field"><label for="arrival">Arrival</label><input id="arrival" name="arrival" type="date" required /></div>
+          <div class="field"><label for="departure">Departure</label><input id="departure" name="departure" type="date" required /></div>
+          <div class="field"><label for="guests">Guests</label><select id="guests" name="guests" required><option value="" disabled selected>Select guests</option><option>1 guest</option><option>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6 guests</option><option>7+ guests</option></select></div>
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required /></div>
+          <div class="field full"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+          <div class="field full"><label for="message">Anything you’d like us to know? <span style="font-weight:400;color:#566970">(optional)</span></label><textarea id="message" name="message" placeholder="Share a question or a little about your trip."></textarea></div>
+          <p class="form-note">Your dates are a request only. The stay is confirmed after we reply and agree on the details.</p>
+          <button class="button" type="submit">Request availability</button>
+          <p id="form-message" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-inner"><div><div class="footer-brand">Emmet’s Place</div><div>Miller Beach · Indiana</div></div><p class="footer-note">A cottage stay on Lake Michigan’s Indiana shore.</p><a href="#top">Back to top</a></div>
+  </footer>
+  <script>
+    const bookingForm = document.getElementById('booking-form');
+    const formMessage = document.getElementById('form-message');
+    const arrival = document.getElementById('arrival');
+    const departure = document.getElementById('departure');
+    const today = new Date();
+    const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    arrival.min = localToday;
+    departure.min = localToday;
+    arrival.addEventListener('change', () => { departure.min = arrival.value || localToday; if (departure.value && departure.value <= arrival.value) departure.value = ''; });
+    bookingForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!bookingForm.reportValidity()) return;
+      formMessage.style.display = 'block';
+      formMessage.textContent = 'The request form is ready. Its delivery address will be connected before the site opens for guest requests.';
+    });
+  </script>
+</body>
+</html>
